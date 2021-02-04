@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./src/assets/private/sass/colors"; 
+
+button:focus {
+    outline: 0;
+}
+
+.base-button {
+    background-color: $base-color;
+    color: white;
+    border: none;
+    width: 100%;
+    min-height: 48px;
+    cursor: pointer;
+    border-radius: 15px;
+
+    &:active {
+        background-color: $border-dark;
+    }
+
+    &:disabled {
+        opacity: 0.2;
+    }
+}
