@@ -1,0 +1,10 @@
+.page-conternier {
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    padding-bottom: 168px;
+
+    @media (max-width: 500px) {
+        padding-bottom: 249px;
+    }
+}

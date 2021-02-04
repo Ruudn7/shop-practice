@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid d-none d-md-block">
+        <div class="row w-100">
+            <div class="navbar-header col-3">
+                <a class="navbar__brand" href="#">Sklep</a>
+            </div>
+            <div class="collapse navbar-collapse col-8 mx-auto d-flex">
+                <a class="col navbar__link" href="#">Link1</a>
+                <a class="col navbar__link" href="#">Link2</a>
+                <a class="col navbar__link" href="#">Link3</a>
+                <a class="col navbar__link" href="#">Link4</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="d-block d-md-none navbar-mobile" appToggleListDirective>
+        <i-bs
+            name="list"
+            class="text-primary menu-icon"
+            width="2rem"
+            height="2rem"
+            appOpenToogleList
+        >
+        </i-bs>
+        <div class="toggle-links" appToogleList [maxHeight]="500"> 
+            <ul class="list-unstyled">
+                <li class="toggle-links__item">
+                    <a href="#">Link1</a>
+                </li>
+                <li class="toggle-links__item">
+                    <a href="#">Link2</a>
+                </li>
+                <li class="toggle-links__item">
+                    <a href="#">Link3</a>
+                </li>
+                <li class="toggle-links__item">
+                    <a href="#">Link4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
