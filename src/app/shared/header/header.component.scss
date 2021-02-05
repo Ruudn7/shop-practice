@@ -1,0 +1,32 @@
+@import "./src/assets/private/sass/colors"; 
+
+
+.navbar {
+    background-color: $base-color;
+
+    &__brand {
+        color: white;
+    }
+
+    &__link {
+        color: white;
+        text-align: center;
+    }
+
+    &-mobile {
+        .menu-icon {
+            color: white !important;
+            cursor: pointer;
+        }
+
+        .toggle-links {
+            overflow: hidden;
+            transition: 0.3s ease-in-out all;
+
+            a {
+                color: white;
+            }
+        }
+
+    }
+}

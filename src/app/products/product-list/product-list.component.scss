@@ -1,0 +1,28 @@
+@import "./src/assets/private/sass/colors"; 
+
+.list-content {
+    border: 1px solid $base-color;
+    min-height: 300px;
+    max-width: 900px;
+    border-radius: 15px;
+    height: fit-content;
+
+    &__header {
+        font-size: 24px;
+        font-weight: 400;
+        border-bottom: 1px solid $base-color;
+    }
+}
+
+.filter-box {
+    border: 1px solid $base-color;
+    min-height: 300px;
+    border-radius: 15px;
+    height: fit-content;
+
+    &__header {
+        font-size: 24px;
+        font-weight: 400;
+        border-bottom: 1px solid $base-color;
+    }
+}

@@ -1,0 +1,45 @@
+<div class="login-container p-5 w-100 h-100 d-flex">
+    <div class="login-container__content m-auto p-3">
+        <div class="login-container__content__header text-center pb-3">
+            Logowanie
+        </div>
+        <form #loginForm="ngForm" class="my-5" (ngSubmit)="save(loginForm.value)"> 
+
+            <!-- LOGIN -->
+            <div class="form-control mt-">
+                <input type="text" placeholder="Login" #userLogin="ngModel" ngModel name="userLogin" autocomplete="false" required minlength="6">
+            </div>
+            <ng-template [ngIf]="userLogin.errors?.minlength && userLogin.touched">
+                <div class="error">Login powinien posiadać co najmniej 6 liter</div>
+            </ng-template>
+            <ng-template [ngIf]="userLogin.errors?.required && userLogin.touched">
+                <div class="error">Login jest obowiązkowy</div>
+            </ng-template>
+
+            <!-- PASSOWRD -->
+            <div class="form-control mt-3" [ngClass]="{'hasError': !!userPassword.errors && userPassword.touched}">
+                <input type="password" placeholder="Hasło" #userPassword="ngModel" ngModel required name="userPassword" autocomplete="false" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
+            </div>
+            
+            <ng-template [ngIf]="userPassword.errors?.pattern && userPassword.touched">
+                <div class="error">Hasło powinno posiadać 6 liter, znak specjalny, małą oraz wielką literę </div>
+            </ng-template>
+            <ng-template [ngIf]="userPassword.errors?.required && userPassword.touched">
+                <div class="error">Hasło jest obowiązkowe</div>
+            </ng-template>
+
+            <!-- REGISTER -->
+            <div class="login-container__content__options d-flex my-3">
+                <div class="mx-auto">
+                    Załóż konto
+                </div>
+            </div>
+
+            <!-- SEND BUTTON -->
+            <button type="submit" class="mt-auto base-button send-button" [disabled]="loginForm.invalid">
+                Zaloguj
+            </button>
+        </form>
+    </div>
+
+</div> 
