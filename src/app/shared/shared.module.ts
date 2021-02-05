@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
@@ -13,19 +14,20 @@ import { HeaderComponent } from './header/header.component';
     imports: [
         NgxBootstrapIconsModule.pick(allIcons),
         ToastrModule.forRoot(),
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        CommonModule
     ],
     declarations: [
         HeaderComponent,
         FooterComponent,
         ToggledListDirective,
         OpenToogleListDirective,
-        ToogleListHeightDirective
+        ToogleListHeightDirective,
     ],
     exports: [
         HeaderComponent,
         FooterComponent,
-        ToggledListDirective
+        ToggledListDirective,
     ]
 })
 export class SharedModule { }

@@ -1,0 +1,6 @@
+@import "./src/assets/private/sass/colors"; 
+
+@mixin base-border {
+    border: 1px solid $base-color;
+    border-radius: 15px;
+}

@@ -1,15 +1,14 @@
-@import "./src/assets/private/sass/colors"; 
+@import "./src/assets/private/base"; 
 
 .login-container {
     padding-bottom: 72px !important;
 
     &__content {
-        border: 1px solid $base-color;
+        @include base-border;
         background-color: white;
         max-width: 350px;
         width: calc(100% - 32px);
         min-height: 400px;
-        border-radius: 15px;
         position: relative;
 
 
