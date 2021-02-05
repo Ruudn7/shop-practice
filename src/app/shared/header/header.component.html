@@ -9,7 +9,7 @@
                 <a class="col navbar__link" href="about">O nas</a>
                 <a class="col navbar__link" href="#">Link3</a>
                 <a class="col navbar__link" href="contact">Kontakt</a>
-                <a class="col navbar__link" href="login">Logowanie</a>
+                <a class="col navbar__link" href="login" *ngIf="isLogin === false; else logoutBlockDesktop">Logowanie</a>
             </div>
         </div>
 
@@ -38,9 +38,17 @@
                     <a href="contact">Kontakt</a>
                 </li>
                 <li class="toggle-links__item">
-                    <a href="login">Logowanie</a>
+                    <a href="login" *ngIf="isLogin === false; else logoutBlockMobile">Logowanie</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<ng-template #logoutBlockMobile>
+    <div (click)="logout()">Wyloguj</div>
+</ng-template>
+
+<ng-template #logoutBlockDesktop>
+    <div class="col navbar__link" (click)="logout()">Wyloguj</div>
+</ng-template>
