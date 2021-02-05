@@ -13,7 +13,7 @@
                 Lista produktów
             </div>
             <div *ngFor="let product of products$ | async">
-                {{product.name}}
+                <app-product-list-item [product]="product"></app-product-list-item>
             </div>
         </div>
     </div>

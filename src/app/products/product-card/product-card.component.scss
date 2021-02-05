@@ -1,0 +1,5 @@
+@import "./src/assets/private/base"; 
+
+.product-card {
+    @include base-border;
+}

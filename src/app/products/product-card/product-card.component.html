@@ -1,1 +1,7 @@
-<p>product-card works!</p>
+<div class="container mt-5">
+    <div class="row product-card mb-5">
+        <app-product-description [product]='(product$ | async )' class="col-9"></app-product-description>
+        <app-product-add-to-cart [product]='(product$ | async )' class="col-3"></app-product-add-to-cart>
+        <app-product-comments [product]='(product$ | async )' class="col-12"></app-product-comments>
+    </div>
+</div>

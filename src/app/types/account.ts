@@ -9,6 +9,7 @@ export interface Product {
     price: string;
     category: string;
     id: string;
+    description?: string;
 }
 
 export interface Filter {

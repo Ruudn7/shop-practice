@@ -1,1 +1,18 @@
-<p>product-list-item works!</p>
+<div class="container mt-3">
+    <div class="row product-container">
+        <div class="col-3 d-flex">
+            <div class="product-container__photo mx-auto d-block mt-2"></div>
+        </div>
+        <div class="col-9">
+            <a class="product-container__header" [routerLink]="['/product', product.id]">
+                {{product.name}}
+                <small>
+                    (Kategoria: {{product.category | categoryPipe}})
+                </small>
+            </a>
+            <div class="product-container__description">
+                {{product.description ? product.description : "Opis"}}
+            </div>
+        </div>
+    </div>
+</div>
