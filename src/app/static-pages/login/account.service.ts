@@ -7,7 +7,7 @@ import { Account } from 'src/app/types/account';
     providedIn: 'root'
 })
 
-export class LoginService {
+export class AccountService {
 
     url = 'http://localhost:3000/';
 
@@ -19,6 +19,12 @@ export class LoginService {
         return this.http.get<Account>(`
             ${this.url}users?user.userLogin=${user.userLogin}&user.userPassowrd=${user.userPassword}
         `);
+    }
+
+    createUser(user: Account): Observable<Account> {
+        return this.http.post<Account>(`
+            ${this.url}users
+        `, user);
     }
 
     getUser(): Observable<Pick<Account, 'userLogin' | 'userPassword'>[]> {

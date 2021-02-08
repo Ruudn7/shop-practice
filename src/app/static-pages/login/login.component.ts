@@ -1,10 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Account } from 'src/app/types/account';
 
-import { LoginService } from './login.service';
+import { AccountService } from './account.service';
 
 @Component({
     selector: 'app-login',
@@ -14,22 +13,32 @@ import { LoginService } from './login.service';
 
 export class LoginPageComponent {
 
+    registerForm = false;
+
     constructor(
-        private loginServ: LoginService,
+        private accountServ: AccountService,
         private toastr: ToastrService,
         private route: Router
     ) {}
 
-    save(userData: Pick<Account, 'userLogin' | 'userPassword'>): any {
-        this.loginServ.loginUser(userData).subscribe(
+    loginUser(userData: Pick<Account, 'userLogin' | 'userPassword'>): void {
+        this.accountServ.loginUser(userData).subscribe(
             (res: any) => {
                 res && res.length ? this.correctLogin() : this.errorLogin();
             }
         );
     }
 
+    createAccount(userData: Account): void {
+        this.accountServ.createUser(userData).subscribe(
+            (res: any) => {
+                res ? this.correctLogin() : this.errorCreate();
+            }
+        );
+    }
+
     getUsers(): any {
-        this.loginServ.getUser().subscribe(
+        this.accountServ.getUser().subscribe(
             (res: any) => {
                 console.log(res);
             }
@@ -46,5 +55,13 @@ export class LoginPageComponent {
 
     errorLogin(): void {
         this.toastr.error('Dane niepoprawne');
+    }
+
+    errorCreate(): void {
+        this.toastr.error('Błąd podczas tworzenia konta, spróbuj ponownie');
+    }
+
+    show(form: any): any {
+        console.log(form);
     }
 }
