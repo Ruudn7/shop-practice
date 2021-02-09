@@ -16,3 +16,9 @@ export interface Filter {
     name: string;
     category: string;
 }
+
+
+export enum Roles {
+    ADMIN = 'ADMIN',
+    BUYER = 'BUYER'
+}

@@ -523,5 +523,9 @@
       "name": "category5",
       "category": "5"
     }
-  ]
+  ],
+  "roles": {
+    "ADMIN": "ADMIN",
+    "BUYER": "BUYER"
+  }
 }

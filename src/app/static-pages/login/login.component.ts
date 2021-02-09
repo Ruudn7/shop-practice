@@ -46,7 +46,7 @@ export class LoginPageComponent {
     }
 
     correctLogin(): void {
-        localStorage.setItem('loginStatus', 'login');
+        localStorage.setItem('token', 'sampleToken');
         this.toastr.success('Zalogowano poprawnie');
         setTimeout(() => {
             this.route.navigateByUrl('');
