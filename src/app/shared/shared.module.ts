@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { ToastrModule } from 'ngx-toastr';
 
+import { CloseClickOutsideDirective } from './directives/close-click-outside.directive';
 import { OpenToogleListDirective } from './directives/open-toogle-list.directive';
 import { ToggledListDirective } from './directives/toggle-list-directive.directive';
 import { ToogleListHeightDirective } from './directives/toogle-list-height.directive';
@@ -23,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
         ToggledListDirective,
         OpenToogleListDirective,
         ToogleListHeightDirective,
+        CloseClickOutsideDirective,
     ],
     exports: [
         HeaderComponent,

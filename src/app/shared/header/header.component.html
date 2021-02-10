@@ -9,7 +9,7 @@
                 <a class="col navbar__link" href="about">O nas</a>
                 <a class="col navbar__link" href="product/list">Lista produktów</a>
                 <a class="col navbar__link" href="contact">Kontakt</a>
-                <a class="col navbar__link" href="login" *ngIf="isLogin === false; else logoutBlockDesktop">Logowanie</a>
+                <a class="col navbar__link login-box" href="login" *ngIf="isLogin === false; else logoutBlockDesktop">Logowanie</a>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
                 <li class="toggle-links__item">
                     <a href="contact">Kontakt</a>
                 </li>
-                <li class="toggle-links__item">
+                <li class="toggle-links__item login-box">
                     <a href="login" *ngIf="isLogin === false; else logoutBlockMobile">Logowanie</a>
                 </li>
             </ul>
@@ -50,5 +50,18 @@
 </ng-template>
 
 <ng-template #logoutBlockDesktop>
-    <div class="col navbar__link" (click)="logout()">Wyloguj</div>
+    <div class="toggled-menu login-box" appToggleListDirective > 
+        <div class="toggled-menu__header col navbar__link d-flex" appOpenToogleList #appOpenToogleList>
+            <div class="ml-auto">Menu</div> 
+            <i-bs
+                name="chevron-down"
+                class="text-primary toggled-menu__toggler mr-auto"
+            ></i-bs>
+        </div>
+        <div class="toggled-menu__content px-2" appToogleList appCloseClickOutside [excludeElem]="appOpenToogleList" >
+            <a class="toggled-menu__item py-2">Koszyk</a>
+            <a class="toggled-menu__item py-2">Konto</a>
+            <a class="toggled-menu__item py-2" (click)="logout()">Wyloguj</a>
+        </div>
+    </div>
 </ng-template>

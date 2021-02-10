@@ -19,7 +19,7 @@ export class AccountService {
 
     loginUser(user: Pick<Account, 'userLogin' | 'userPassword'>): Observable<Account> {
         return this.http.get<Account>(`
-            ${this.url}users?user.userLogin=${user.userLogin}&user.userPassowrd=${user.userPassword}
+            ${this.url}users?userLogin=${user.userLogin}&userPassowrd=${user.userPassword}
         `);
     }
     correctLogin(): boolean {

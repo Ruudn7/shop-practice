@@ -29,4 +29,66 @@
         }
 
     }
+
+    .toggled-menu {
+        position: relative;
+
+        &__toggler {
+            color: white !important;
+            margin-left: 8px;
+            margin-top: auto;
+            margin-bottom: auto;
+            height: 18px;
+            transition: ease-in-out all 0.3s;
+        }
+
+        &__header {
+            cursor: pointer;
+        }
+
+        &__content {
+            transition: ease-in-out all 0.3s;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            left: 0;
+            background: white;
+            min-width: 110px;
+            top: 31px;
+            border-top: 1px solid $base-color;
+            z-index: 1;
+
+            a {
+                display: block;
+                text-align: center;
+                font-size: 14px;
+                border-bottom: 1px solid $base-color;
+                cursor: pointer;
+
+                &:last-child {
+                    border: none;
+                }
+
+                &:hover {
+                    color: $base-color;
+                }
+            }
+        }
+
+        &.show {
+            > .toggled-menu__content {
+                transition: ease-in-out all 0.3s;
+                border: 1px solid $base-color;
+            }
+
+            .toggled-menu__toggler {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .login-box {
+        max-width: 150px;
+        width: 100%;
+    }
 }
