@@ -1,3 +1,4 @@
+import { AccountService } from './../../static-pages/login/account.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -9,9 +10,10 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-  isLogin = localStorage.getItem('loginStatus') === 'login';
+  isLogin = this.accountServ.correctLogin();
   mySubscription = new Subscription();
   constructor(
+    private accountServ: AccountService,
     private router: Router
   ) { }
 
@@ -22,13 +24,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     this.mySubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLogin = localStorage.getItem('loginStatus') === 'login';
+        this.isLogin = this.accountServ.correctLogin();
       }
     });
   }
 
   logout(): void {
-    localStorage.removeItem('loginStatus');
+    this.accountServ.logout();
     this.isLogin = false;
   }
 

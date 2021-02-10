@@ -8,8 +8,8 @@ export class OpenToogleListDirective {
   toggleButton = new EventEmitter();
 
   @HostListener('click')
-    toggle(): void {
-        this.toggleButton.emit();
-    }
+  toggle(): void {
+      this.toggleButton.emit();
+  }
 
 }
