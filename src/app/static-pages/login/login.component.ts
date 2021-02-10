@@ -37,14 +37,6 @@ export class LoginPageComponent {
         );
     }
 
-    getUsers(): any {
-        this.accountServ.getUser().subscribe(
-            (res: any) => {
-                console.log(res);
-            }
-        );
-    }
-
     correctLogin(): void {
         localStorage.setItem('token', 'sampleToken');
         this.toastr.success('Zalogowano poprawnie');
@@ -59,9 +51,5 @@ export class LoginPageComponent {
 
     errorCreate(): void {
         this.toastr.error('Błąd podczas tworzenia konta, spróbuj ponownie');
-    }
-
-    show(form: any): any {
-        console.log(form);
     }
 }
