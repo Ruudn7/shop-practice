@@ -10,6 +10,9 @@ import { ProductDescriptionComponent } from './product-card/product-description/
 import { ProductListFiltersComponent } from './product-list-filters/product-list-filters.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { FilterItemComponent } from './filters/filter-item/filter-item.component';
+import { FilterContainerComponent } from './filters/filter-container/filter-container.component';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
     { path: '', component: ProductCardComponent },
@@ -21,6 +24,7 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes),
         CommonModule,
+        SharedModule
     ],
     declarations: [
         ProductCardComponent,
@@ -30,7 +34,9 @@ const routes: Routes = [
         CategoryPipePipe,
         ProductDescriptionComponent,
         ProductAddToCartComponent,
-        ProductCommentsComponent
+        ProductCommentsComponent,
+        FilterItemComponent,
+        FilterContainerComponent
     ],
     exports: [
         ProductCardComponent,

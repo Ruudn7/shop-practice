@@ -1,11 +1,8 @@
 <div class="container-fluid">
-    <div class="row list-container">
-        <div class="col-3 filter-box ml-auto my-5 p-3">
-            <div class="filter-box__header text-center pb-3 p-3">
-                Filtry
-            </div>
-            <div *ngFor="let filter of filters$ | async">
-                {{filter.name}}
+    <div class="row list-container" appFiltersContainer>
+        <div class="col-3">
+            <div>
+                <app-filter-container></app-filter-container>
             </div>
         </div>
         <div class="col-7 list-content ml-4 my-5 mr-auto p-3">
