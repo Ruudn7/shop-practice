@@ -9,7 +9,6 @@ export class ListFiltersDirective {
 
   products: FilterListItemDirective[] = [];
 
-
   registerFiltredItems(products: FilterListItemDirective[]): void {
     this.products = products;
   }
