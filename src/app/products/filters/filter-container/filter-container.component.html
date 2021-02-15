@@ -1,0 +1,9 @@
+<div class="filter-box ml-auto my-5 p-3">
+    <div class="filter-box__header pl-2 py-3">
+        Filtry
+    </div>
+    <div>
+        <app-filter-item *ngFor="let filter of filters$ | async" [filter]="filter" appFiltersItem> </app-filter-item>       
+    </div>
+    
+</div>
