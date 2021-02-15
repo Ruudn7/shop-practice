@@ -6,13 +6,8 @@ import { Filter } from 'src/app/types/account';
   templateUrl: './filter-item.component.html',
   styleUrls: ['./filter-item.component.scss']
 })
-export class FilterItemComponent implements AfterViewInit {
+export class FilterItemComponent {
 
   @Input() filter!: Filter;
-
-  constructor() { }
-
-  ngAfterViewInit(): void {
-  }
 
 }

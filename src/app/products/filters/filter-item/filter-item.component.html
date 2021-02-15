@@ -1,4 +1,10 @@
-<div class="text-center pt-3 mx-2">
-    {{filter.name}}
-</div>
 
+<div class="d-flex">
+    <label class="text-center pt-3 mx-2 w-100 d-flex" >
+        <div class="mx-auto">
+            <input type="checkbox" class="ml-auto my-auto mr-2">
+        </div>
+
+        <p class="mr-auto my-auto w-100 text-left" (click)="$event.stopPropagation()">{{filter.name}}</p>
+    </label>
+</div>

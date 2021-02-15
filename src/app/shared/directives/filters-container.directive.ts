@@ -1,23 +1,53 @@
-import { Directive, ElementRef, ViewChild } from '@angular/core';
+import { ContentChild, Directive, EventEmitter, Output, QueryList } from '@angular/core';
+import { Filter } from 'src/app/types/account';
 
-import { FilterItemComponent } from './../../products/filters/filter-item/filter-item.component';
-import { FiltersItemDirective } from './filters-item.directive';
+import { FilterListItemDirective } from './filter-list-item.directive';
+import { ListFiltersDirective } from './list-filters.directive';
 
 @Directive({
   selector: '[appFiltersContainer]'
 })
 export class FiltersContainerDirective {
 
-  @ViewChild(FilterItemComponent) filterList!: FilterItemComponent;
-  constructor(
-    private el: ElementRef
-  ) { }
+  currentFilters: string[] = [];
+  filterFilters: Filter[] = [];
+  producsts: FilterListItemDirective[] = [];
 
-  filterItems: FiltersItemDirective[] = [];
+  @Output() countVisibleProducts = 0;
+  @Output() itemCounter = new EventEmitter();
+  @ContentChild(ListFiltersDirective) list = new QueryList<ListFiltersDirective>();
 
-  registerItems(item: FiltersItemDirective): void {
-    this.filterItems.push(item);
-    console.log(this.filterItems);
+  registerFilters(filter: Filter): void {
+    if (!this.currentFilters.includes(filter.category)) {
+      this.currentFilters.push(filter.category);
+    } else {
+      this.currentFilters = this.currentFilters.filter(el => el !== filter.category);
+    }
+
+    this.showItems();
+  }
+
+  registerFiltredItems(item: FilterListItemDirective): void {
+    this.producsts.push(item);
+  }
+
+  showItems(): void {
+    this.countVisibleProducts = 0;
+    if (this.currentFilters.length) {
+      this.producsts.forEach(
+        el => {
+          if (this.currentFilters.some(catId => catId === el.categoryId)) {
+            this.countVisibleProducts++;
+            el.isFiltersActive = false;
+          } else {
+            el.isFiltersActive = true;
+          }
+        }
+      );
+    } else {
+      this.producsts.forEach( el => el.isFiltersActive = false);
+    }
+
   }
 
 }

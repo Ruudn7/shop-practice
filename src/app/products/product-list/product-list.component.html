@@ -9,8 +9,10 @@
             <div class="list-content__header text-center pb-3 p-3">
                 Lista produktów
             </div>
-            <div *ngFor="let product of products$ | async">
-                <app-product-list-item [product]="product"></app-product-list-item>
+            <div appListFilters (click)="$event.preventDefault()">
+                <div *ngFor="let product of products$ | async" appFilterListItem [categoryId]="product.category" #visibleItem>
+                    <app-product-list-item [product]="product"></app-product-list-item>
+                </div>
             </div>
         </div>
     </div>

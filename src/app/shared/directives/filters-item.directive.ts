@@ -1,4 +1,5 @@
-import { Directive, Optional } from '@angular/core';
+import { Directive, HostListener, Input, Optional } from '@angular/core';
+import { Filter } from 'src/app/types/account';
 
 import { FiltersContainerDirective } from './filters-container.directive';
 
@@ -7,12 +8,18 @@ import { FiltersContainerDirective } from './filters-container.directive';
 })
 export class FiltersItemDirective {
 
+  @Input() filter!: Filter;
+
   constructor(
     @Optional() private filterContainer: FiltersContainerDirective
-  ) {
-    filterContainer.registerItems(this);
+  ) { }
+
+  @HostListener('click') click(): void {
+    this.clickOnFilter();
   }
 
-
+  clickOnFilter(): void {
+    this.filterContainer.registerFilters(this.filter);
+  }
 
 }

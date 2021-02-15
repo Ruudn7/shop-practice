@@ -1,15 +1,17 @@
-import { AfterContentInit, Directive, ElementRef, TemplateRef, ViewChild } from '@angular/core';
+import { Directive } from '@angular/core';
+
+import { FilterListItemDirective } from './filter-list-item.directive';
 
 @Directive({
   selector: '[appListFilters]'
 })
-export class ListFiltersDirective implements AfterContentInit {
+export class ListFiltersDirective {
 
-  constructor(
-    private elem: ElementRef
-  ) { }
+  products: FilterListItemDirective[] = [];
 
-  ngAfterContentInit(): void {
+
+  registerFiltredItems(products: FilterListItemDirective[]): void {
+    this.products = products;
   }
 
 }

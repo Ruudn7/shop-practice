@@ -4,6 +4,7 @@ import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { ToastrModule } from 'ngx-toastr';
 
 import { CloseClickOutsideDirective } from './directives/close-click-outside.directive';
+import { FilterListItemDirective } from './directives/filter-list-item.directive';
 import { FiltersContainerDirective } from './directives/filters-container.directive';
 import { FiltersItemDirective } from './directives/filters-item.directive';
 import { ListFiltersDirective } from './directives/list-filters.directive';
@@ -29,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
         ListFiltersDirective,
         FiltersContainerDirective,
         FiltersItemDirective,
+        FilterListItemDirective,
     ],
     exports: [
         HeaderComponent,
@@ -36,7 +38,8 @@ import { HeaderComponent } from './header/header.component';
         ToggledListDirective,
         ListFiltersDirective,
         FiltersContainerDirective,
-        FiltersItemDirective
+        FiltersItemDirective,
+        FilterListItemDirective
     ]
 })
 export class SharedModule { }
