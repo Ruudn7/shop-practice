@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 
+import { SharedModule } from '../shared/shared.module';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +29,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    NgxBootstrapIconsModule.pick(allIcons),
+    SharedModule
   ]
 })
 export class StaticPagesModule { }

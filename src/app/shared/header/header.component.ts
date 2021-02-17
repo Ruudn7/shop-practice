@@ -1,7 +1,8 @@
-import { AccountService } from './../../static-pages/login/account.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+
+import { AccountService } from './../../static-pages/login/account.service';
 
 @Component({
   selector: 'app-header',

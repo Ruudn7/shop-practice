@@ -1,0 +1,69 @@
+@import "./src/assets/private/base"; 
+
+.accordion-group {
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 36px;
+
+    &:first {
+        margin-top: 8px;
+    }
+
+    .accordion-header {
+        font-size: 26px;
+        text-align: center;
+        border-bottom: 1px solid $base-color;
+        margin-bottom: 36px;
+    }
+
+    .accordion-content {
+        .accordion-item {
+            border: 1px solid $base-color;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+
+            &__header {
+                font-size: 18px;
+                text-align: center;
+                background-color: $base-color;
+                color: white;
+                height: 36px;
+                line-height: 36px;
+                border: 1px solid $base-color;
+                cursor: pointer;
+            }
+
+            &__content {
+                transition: 0.3s all ease-in-out;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            &.show {
+                .accordion-item__content {
+                    padding: 8px;
+                }
+
+                .accordion-item__toggler{
+                    transform: rotate(180deg);
+
+                    * {
+                        transform: rotate(180deg);
+                    }
+                } 
+            }
+
+            &__toggler {
+                color: white !important;
+                margin-left: 8px;
+                margin-top: auto;
+                margin-bottom: auto;
+                line-height: 8px;
+                transition: ease-in-out all 0.3s;
+            }
+        }
+    }
+}
