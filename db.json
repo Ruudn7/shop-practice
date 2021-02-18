@@ -18,15 +18,15 @@
   },
   "users": [
     {
-        "userLogin": "asdads",
-        "userPassword": "!Q2w3e4r",
-        "id": 1
+      "userLogin": "asdads",
+      "userPassword": "!Q2w3e4r",
+      "id": 1
     },
     {
-        "userLogin": "sample123",
-        "userPassword": "!Q2w3e4r5t",
-        "userEmail": "sample1@1",
-        "id": 2
+      "userLogin": "sample123",
+      "userPassword": "!Q2w3e4r5t",
+      "userEmail": "sample1@1",
+      "id": 2
     }
   ],
   "products": [
@@ -525,5 +525,11 @@
   "roles": {
     "ADMIN": "ADMIN",
     "BUYER": "BUYER"
-  }
+  },
+  "contact": [
+    {
+        "email": "asd@asd",
+        "message": "asd"
+    }
+  ]
 }

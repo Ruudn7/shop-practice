@@ -4,3 +4,15 @@
     border: 1px solid $base-color;
     border-radius: 15px;
 }
+
+@mixin base-header {
+    font-size: 26px;
+    text-align: center;
+    border-bottom: 1px solid $base-color;
+}
+
+.base-button {
+    background-color: $base-color;
+    color: white;
+    border-radius: 15px;
+}

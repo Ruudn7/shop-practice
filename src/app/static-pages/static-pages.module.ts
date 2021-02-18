@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { ToastrModule } from 'ngx-toastr';
 
 import { SharedModule } from '../shared/shared.module';
 import { AboutComponent } from './about/about.component';
@@ -30,7 +31,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
+    ReactiveFormsModule,
     NgxBootstrapIconsModule.pick(allIcons),
+    ToastrModule.forRoot(),
     SharedModule
   ]
 })

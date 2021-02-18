@@ -12,9 +12,7 @@
     }
 
     .accordion-header {
-        font-size: 26px;
-        text-align: center;
-        border-bottom: 1px solid $base-color;
+        @include base-header;
         margin-bottom: 36px;
     }
 
